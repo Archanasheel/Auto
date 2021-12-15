@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.axess.ai.automation.utilities.ListenersApp"/>
+  </listeners>
+  <test thread-count="5" name="Test UserRoles(failed)">
+    <classes>
+      <class name="com.axess.ai.automation.testcases.UserRolesPageTest">
+        <methods>
+          <include name="validateCreateAndDeleteRole"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.axess.ai.automation.testcases.UserRolesPageTest -->
+    </classes>
+  </test> <!-- Test UserRoles(failed) -->
+  <test thread-count="5" name="Test Device And Module(failed)">
+    <classes>
+      <class name="com.axess.ai.automation.testcases.DeviceAndModulesPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="validateAllBtns"/>
+        </methods>
+      </class> <!-- com.axess.ai.automation.testcases.DeviceAndModulesPageTest -->
+    </classes>
+  </test> <!-- Test Device And Module(failed) -->
+  <test thread-count="5" name="Test Templates(failed)">
+    <classes>
+      <class name="com.axess.ai.automation.testcases.TemplatesPageTest">
+        <methods>
+          <include name="validateDeviceTemplate"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.axess.ai.automation.testcases.TemplatesPageTest -->
+    </classes>
+  </test> <!-- Test Templates(failed) -->
+</suite> <!-- Failed suite [Suite] -->
