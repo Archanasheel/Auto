@@ -12,9 +12,8 @@ import com.axess.ai.automation.utilities.TestBase;
 
 @Listeners(com.axess.ai.automation.utilities.ListenersApp.class)
 
-public class EntitiesPageTest extends TestBase{
-	
-	
+public class EntitiesPageTest extends TestBase {
+
 	LoginPage loginPage;
 	EntitiesPage entitiesPage;
 
@@ -24,65 +23,55 @@ public class EntitiesPageTest extends TestBase{
 
 	@BeforeTest
 	public void setup() throws Throwable {
-		
+
 		launchBrowser();
 		loginPage = new LoginPage();
 		entitiesPage = new EntitiesPage();
 		loginPage.verifyLoginWithValidCredentials(prop.getProperty("username"), prop.getProperty("password"));
 		loginPage.verifyClickOnLoginButton();
-		
+
 	}
-	
-	@Test(priority=1)
+
+	@Test(priority = 1)
 	public void validateEntities() throws Throwable {
-		
+
 		entitiesPage = new EntitiesPage();
 		entitiesPage.verifyEntities();
 
 	}
-	
-	@Test(priority=2)
+
+	@Test(priority = 2)
 	public void validatePageHeading() throws InterruptedException {
-		
+
 		entitiesPage = new EntitiesPage();
-	    entitiesPage.verifyPageHeading();
+		entitiesPage.verifyPageHeading();
 	}
 
-	@Test(priority=2)
+	@Test(priority = 2)
 	public void validateCurrentUrl() throws Throwable {
-		
+
 		entitiesPage = new EntitiesPage();
 		entitiesPage.verifyPageUrl();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@Test(priority =3)
+	public void validateModuleGroups() throws InterruptedException {
+		
+		entitiesPage = new EntitiesPage();
+		entitiesPage.verifyModuleGroups();
+		
+	}
+	/*
+	@Test(priority = 4)
+	public void validateEntityCreation() throws InterruptedException {
+
+		entitiesPage = new EntitiesPage();
+		entitiesPage.verifyEntityCreation();
+	}
+*/
 	@AfterTest
 	public void tearDown() {
 		stop();
 	}
-	
+
 }

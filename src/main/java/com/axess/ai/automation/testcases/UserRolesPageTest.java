@@ -2,13 +2,16 @@ package com.axess.ai.automation.testcases;
 
 import org.testng.annotations.AfterTest;
 
+
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.axess.ai.automation.page.objects.LoginPage;
 import com.axess.ai.automation.page.objects.UserRolesPage;
 import com.axess.ai.automation.utilities.TestBase;
 
+@Listeners(com.axess.ai.automation.utilities.ListenersApp.class)
 public class UserRolesPageTest extends TestBase {
 	
 	

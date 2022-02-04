@@ -41,7 +41,7 @@ public class LoginPageTest extends TestBase {
 
 	@Test(priority = 4)
 	public void validateTitle() {
-		
+
 		loginPage = new LoginPage();
 		loginPage.verifyPageTitle();
 
@@ -49,9 +49,9 @@ public class LoginPageTest extends TestBase {
 
 	@Test(priority = 1)
 	public void validateUrl() {
-		
+
 		loginPage = new LoginPage();
-		loginPage.verifyCurrentUrl();
+		loginPage.verifyPageUrl();
 
 	}
 

@@ -1,16 +1,15 @@
 package com.axess.ai.automation.page.objects;
 
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
+import org.testng.Assert;
 import com.axess.ai.automation.utilities.TestBase;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class LoginPage extends TestBase {
 
-
 	public LoginPage() {
-		
+
 		PageFactory.initElements(driver, this);
 	}
 
@@ -28,7 +27,7 @@ public class LoginPage extends TestBase {
 
 		loginButton.click();
 		test.log(LogStatus.INFO, "login Successfully");
-
+		wait(5000);
 	}
 
 	public void verifyPageTitle() {
@@ -39,7 +38,7 @@ public class LoginPage extends TestBase {
 
 	}
 
-	public void verifyCurrentUrl() {
+	public void verifyPageUrl() {
 
 		String currentUrl = driver.getCurrentUrl();
 		test.log(LogStatus.INFO, " Page Url comparison with actual and expected ");

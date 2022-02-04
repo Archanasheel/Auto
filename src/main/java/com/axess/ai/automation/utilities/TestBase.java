@@ -1,5 +1,6 @@
 package com.axess.ai.automation.utilities;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
 import org.openqa.selenium.WebElement;
@@ -20,7 +21,7 @@ public class TestBase extends ListenersApp {
 	@FindBy(xpath = "//h1[text()='Status']")
 	public WebElement dashboardTitle;
 
-	@FindBy(xpath = "//span[text()='Root']")
+	@FindBy(xpath = "//span[contains(text(),'Root')]")
 	public WebElement rootLocation;
 
 	@FindBy(id = "System User")
@@ -89,9 +90,6 @@ public class TestBase extends ListenersApp {
 	@FindBy(id = "user_type")
 	public WebElement userType;
 
-	@FindBy(xpath = "//div[contains(text(),'Administrator')]")
-	public WebElement adminRole;
-
 	@FindBy(xpath = "(//div[@class='ant-select-selector'])[3]")
 	public WebElement locationSelect;
 
@@ -107,11 +105,8 @@ public class TestBase extends ListenersApp {
 	@FindBy(xpath = "//span[contains(text(),'Yes')]")
 	public WebElement yesButton;
 
-	@FindBy(xpath = "//a[contains(text(),'System users')]")
-	public WebElement systemUserBreadCrumb;
-
-	@FindBy(xpath = "//span[contains(text(),'Mehul')]")
-	public WebElement userAdminRole;
+	@FindBy(xpath = "(//button[@class='ant-btn ant-btn-link'])[1]")
+	public WebElement existingUserAdmin;
 
 	@FindBy(xpath = " //span[contains(text(),'Edit')]")
 	public WebElement editButton;
@@ -149,37 +144,34 @@ public class TestBase extends ListenersApp {
 	@FindBy(id = "All Roles")
 	public WebElement allRolesLink;
 	
-	@FindBy(xpath="//span[contains(text(),'xyz')]")
+	@FindBy(xpath="//span[contains(text(),'Yachna')]")
 	public WebElement existingRole;
 	
-	@FindBy(xpath="//span[contains(text(),'xyzNew')]")
-	public WebElement updatedRole;
+	@FindBy(xpath="(//input[@class=\"ant-checkbox-input\"])[1]")
+	public WebElement adminRoleFilter;
 
 	@FindBy(xpath = "//span[@class='anticon anticon-close ant-modal-close-icon']")
 	public WebElement crossBtn;
 
+	@FindBy(xpath="(//span[@class=\"anticon anticon-close\"])[3]")
+	public WebElement crossButton;
+	
 	@FindBy(id = "Location")
 	public WebElement locationLink;
 
 	@FindBy(xpath = "//span[text()='Root']")
 	public WebElement rootTab;
 
-	@FindBy(xpath = "//span[text()='TEST FOR ZONE AKSHAY 1213']")
-	public WebElement zoneTab;
-
-	@FindBy(xpath = "//span[text()='SOUTH ZONE ']")
-	public WebElement subZoneTab;
-
+	@FindBy(xpath="(//input[@class=\"ant-checkbox-input\"])[2]")
+	public WebElement inputCheckBox;
+	
 	@FindBy(id = "roleId")
 	public WebElement roleSelectDropDown;
 
-	@FindBy(xpath = "//div[contains(text(),'System Admin Role')]")
-	public WebElement chooseRole;
-
-	@FindBy(xpath = "//span[contains(text(),'xyz')]")
+	@FindBy(xpath = "//span[contains(text(),'Yachna')]")
 	public WebElement existingUser;
 	
-	@FindBy(xpath = "//span[contains(text(),'xyzNew')]")
+	@FindBy(xpath = "//span[contains(text(),'YachnaNew')]")
 	public WebElement updatedUser;
 
 	@FindBy(xpath = "//span[contains(text(),'Delete')]")
@@ -196,9 +188,6 @@ public class TestBase extends ListenersApp {
 
 	@FindBy(xpath = " //div[contains(text(),'Manage Administrator Roles')]")
 	public WebElement manageAdminRoles;
-
-	@FindBy(xpath = "//a[contains(text(),'Manage Roles')]")
-	public WebElement manageRolesBreadcrumb;
 
 	@FindBy(xpath = "//div[contains(text(),'Filter')]")
 	public WebElement roleFilter;
@@ -220,9 +209,6 @@ public class TestBase extends ListenersApp {
 
 	@FindBy(xpath = "//span[@class='ant-tree-switcher ant-tree-switcher_close']")
 	public static WebElement expandBtn;
-
-	@FindBy(xpath = "(//span[@class='ant-tree-switcher ant-tree-switcher_close'])[1]")
-	public WebElement expandBtn1;
 
 	@FindBy(xpath = "(//span[@class='ant-typography hierarchy-text'])[3]")
 	public WebElement deviceClick;
@@ -257,14 +243,8 @@ public class TestBase extends ListenersApp {
 	@FindBy(id = "moduleTypeId")
 	public WebElement moduleTypeId;
 
-	@FindBy(xpath = "//div[contains(text(),'DOOR')]")
-	public WebElement doorModule;
-
 	@FindBy(id = "dataType")
 	public WebElement dataTypeList;
-
-	@FindBy(xpath = "//div[contains(text(),'Boolean')]")
-	public WebElement booleanDataType;
 
 	@FindBy(xpath = "//span[contains(text(),'YachnaTest')]")
 	public WebElement newField;
@@ -289,6 +269,9 @@ public class TestBase extends ListenersApp {
 
 	@FindBy(xpath = "//tbody/tr[1]/td[1]/label[1]/span[1]/input[1]")
 	public WebElement eventCheckBox;
+	
+	@FindBy(xpath="(//span[@class=\"ant-checkbox\"])[3]")
+	public WebElement checkBoxEvent;
 
 	@FindBy(xpath = "//tbody/tr[1]/td[3]/label[1]/span[1]/input[1]")
 	public WebElement requiredCheckBox;
@@ -316,12 +299,9 @@ public class TestBase extends ListenersApp {
 
 	@FindBy(xpath = "//div[contains(text(),'Add Setting Template')]")
 	public WebElement addSettingTemplate;
-
-	@FindBy(xpath = "//tbody/tr[1]/td[3]/div[1]/div[1]/span[1]")
-	public WebElement selectDefaultValue;
-
-	@FindBy(xpath = "(//div[text()='TRUE'])[2]")
-	public WebElement chooseTrue;
+	
+	@FindBy(xpath="//input[@class=\"ant-input-number-input\"]")
+	public WebElement addIntegerValue;
 
 	@FindBy(xpath = "//span[contains(text(),'Module Template')]")
 	public WebElement moduleTemplate;
@@ -329,17 +309,17 @@ public class TestBase extends ListenersApp {
 	@FindBy(xpath = "//div[contains(text(),'Add Module Template')]")
 	public WebElement addModuleTemplate;
 
-	@FindBy(xpath = "(//div[@class='ant-select-selector'])[2]")
+	@FindBy(id = "event_template")
 	public WebElement selectEvntTemplate;
-
-	@FindBy(xpath = "(//span[@class='ant-select-selection-search'])[3]")
+	
+	@FindBy(id = "setting_template")
 	public WebElement selectSettingTemplate;
+	
+	@FindBy(xpath = "//div[contains(text(),'Yachna')]")
+	public WebElement selectEventTemplateAmbient;
 
-	@FindBy(xpath = "//div[contains(text(),'Event Template Door')]")
-	public WebElement selectEventTemplateDoor;
-
-	@FindBy(xpath = "//div[contains(text(),'SETTING TEMPLATE DOOR')]")
-	public WebElement selectSettingTemplateDoor;
+	@FindBy(xpath = "(//div[text()='Yachna'])[2]")
+	public WebElement selectSettingTemplateAmbient;
 
 	@FindBy(xpath = "//span[contains(text(),'Device Template')]")
 	public WebElement deviceTemplate;
@@ -349,9 +329,6 @@ public class TestBase extends ListenersApp {
 
 	@FindBy(id = "moduleTemplates_0_moduleTemplate")
 	public WebElement moduleTemplateSelect;
-
-	@FindBy(xpath = "//div[contains(text(),'MODULE _DOOR')]")
-	public WebElement moduleDoorSelect;
 
 	@FindBy(id = "moduleTemplates_0_moduleType")
 	public WebElement moduleTypeSelect;
@@ -368,14 +345,8 @@ public class TestBase extends ListenersApp {
 	@FindBy(id = "networkTemplateType")
 	public WebElement networkTemplateType;
 
-	@FindBy(xpath = "//div[contains(text(),'Panel')]")
-	public WebElement panelNetworkTemplate;
-
 	@FindBy(id = "fieldType")
 	public WebElement fieldType;
-
-	@FindBy(xpath = "//div[contains(text(),'Read')]")
-	public WebElement readFieldType;
 
 	@FindBy(xpath = "//span[contains(text(),'Panel Template')]")
 	public WebElement panelTemplate;
@@ -386,11 +357,11 @@ public class TestBase extends ListenersApp {
 	@FindBy(xpath = "//tbody/tr[3]/td[1]/label[1]/span[1]/input[1]")
 	public WebElement chooseNetwrkField;
 
-	@FindBy(xpath = "//tbody/tr[2]/td[4]/div[1]/div[1]")
+	@FindBy(id = "dynamic_single_select_list")
 	public WebElement selectNtwrkField;
-
-	@FindBy(xpath = "(//div[text()='Online'])[2]")
-	public WebElement chooseOnlineMode;
+	
+	@FindBy(xpath="(//div[contains(text(),'Online')])[2]")
+	public WebElement onlineMode;
 
 	@FindBy(xpath = "//span[contains(text(),'Cluster Template')]")
 	public WebElement clusterTemplate;
@@ -404,6 +375,9 @@ public class TestBase extends ListenersApp {
 	@FindBy(xpath = "//div[contains(text(),'Add Module Type')]")
 	public WebElement addModuleType;
 
+	@FindBy(xpath="//div[contains(text(),'STEADY HIGH')]")
+	public WebElement SteadyHigh;
+	
 	@FindBy(id = "moduleTypeNumber")
 	public WebElement moduleTypeNumber;
 	
@@ -413,21 +387,271 @@ public class TestBase extends ListenersApp {
 	@FindBy(xpath="//div[contains(text(),'Create Module Group')]")
 	public WebElement createModuleGroup;
 	
-	@FindBy(id= "locationId")
-	public WebElement locationId;
+	@FindBy(xpath= "//span[@class='ant-cascader-picker-label']")
+	public WebElement locationIdSelect;
 	
-	@FindBy(xpath = "//li[text()='India']")
+	@FindBy(xpath = "//li[text()='INDIA']")
 	public WebElement chooseIndia;
 	
 	@FindBy(id= "moduleTemplateId")
 	public WebElement moduleTemplateId;
 	
-	@FindBy(xpath = "//div[contains(text(),'AutomationScripts')]")
-	public WebElement selectModuleTemplate;
+	@FindBy(xpath ="//div[contains(text(),'AMBIENT')]")
+	public WebElement ambientModule;
 	
+	@FindBy(id="Networking Hardware")
+	public WebElement networkingHardware;
 	
+	@FindBy(xpath = "//span[text()='Cluster']")
+	public WebElement cluster;
 	
+	@FindBy(xpath ="//div[contains(text(),'Create Cluster')]")
+	public WebElement createCluster;
+	
+	@FindBy(xpath = "//li[text()='TEST_BUILDING_098']")
+	public WebElement building;
+	
+	@FindBy(xpath="//span[text()='Doors']")
+	public WebElement doors;
+	
+	@FindBy(xpath="//span[@class='ant-tree-switcher ant-tree-switcher_close']")
+	public WebElement switcherClose;
+	
+	@FindBy(xpath="(//span[@class='ant-tree-checkbox-inner'])[2]")
+	public WebElement selectDoor;
+	
+	@FindBy(id ="networkTemplateId")
+	public WebElement selectTemplate;
+	
+	@FindBy(xpath="(//span[text()='Panel'])[1]")
+	public WebElement Panel;
+	
+	@FindBy(xpath ="//div[contains(text(),'Create Panel')]")
+	public WebElement createPanel;
+	
+	@FindBy(id ="clusterId")
+	public WebElement clusterId;
+	
+	@FindBy(id = "Device")
+	public WebElement device;
+	
+	@FindBy(xpath ="//div[contains(text(),'Create Device')]")
+	public WebElement createDevice;
+	
+	@FindBy(id = "panelId")
+	public WebElement panelId;
+	
+	@FindBy(id = "deviceTemplateId")
+	public WebElement deviceTemplateId;
+	
+	@FindBy(id = "Manage Holidays")
+	public WebElement manageHolidays;
+	
+	@FindBy(xpath = "//span[contains(text(),'Holiday')]")
+	public WebElement holiday;
+	
+	@FindBy(xpath ="//div[contains(text(),'Add Holiday')]")
+	public WebElement addHoliday;
+	
+	@FindBy(id= "date")
+	public WebElement date;
+	
+	@FindBy(xpath ="//span[text()='Holi']")
+	public WebElement existingHoliday;
+	
+	@FindBy(xpath =" //span[contains(text(),'Set Global Holidays')]")
+	public WebElement setGlobalHolidays;
+	
+	@FindBy(xpath ="//span[contains(text(),'Holiday Groups')]")
+	public WebElement holidayGroups;
+	
+	@FindBy(xpath = "//div[contains(text(),'Add Group Holiday')]")
+	public WebElement addGroupHoliday;
+	
+	@FindBy(id="holidayIdList")
+	public WebElement holidayList;
 
+	@FindBy(xpath = "//span[text()='Holidays_Group']")
+	public WebElement existingHolidayGroup;
+	
+	@FindBy(xpath="//span[contains(text(),'Fixed_Holiday')]")
+	public WebElement existingFixedHoliday;
+	
+	@FindBy(xpath="//span[contains(text(),'Fixed_HolidayUpdated')]")
+	public WebElement existingUpdatedFixedHoliday;
+	
+	@FindBy(css=".ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-today")
+	public WebElement todaysDate;
+	
+	@FindBy(id = "Schedule")
+	public WebElement schedule;
+	
+	@FindBy(xpath = "//div[contains(text(),'Add Schedule')]")
+	public WebElement addSchedule;
+	
+	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+	public WebElement activeCheckbox;
+	
+	@FindBy(xpath ="(//input[@type='checkbox'])[3]")
+	public WebElement monCheckbox;
+	
+	@FindBy(xpath ="(//input[@type='checkbox'])[4]")
+	public WebElement tuesCheckbox;
+	
+	@FindBy(xpath ="(//input[@type='checkbox'])[5]")
+	public WebElement wedCheckbox;
+	
+	@FindBy(xpath ="(//input[@type='checkbox'])[6]")
+	public WebElement thurCheckbox;
+	
+	@FindBy(xpath="//a[text()='Now']")
+	public WebElement currentTime;
+	
+	@FindBy(xpath="(//a[text()='Now'])[2]")
+	public WebElement currentTimeNow;
+	
+	@FindBy(xpath ="(//a[text()='Now'])[3]")
+	public WebElement currentNow;
+	
+	@FindBy(xpath="(//a[text()='Now'])[4]")
+	public WebElement current_Now;
+	
+	@FindBy(xpath="(//a[text()='Now'])[5]")
+	public WebElement currentTempNow;
+	
+	@FindBy(xpath="//a[text()='Now'])[6]")
+	public WebElement currentTempEndNow;
+	
+	@FindBy(id = "intervalCOList_0_startMinutesSinceMidnight")
+	public WebElement scheduleStartTime;
+	
+	@FindBy(id ="intervalCOList_0_endMinutesSinceMidnight")
+	public WebElement scheduleEndTime;
+	
+	@FindBy(xpath ="//span[contains(text(),'Automation Schedule')]")
+	public WebElement existingSchedule;
+	
+	@FindBy(id ="Access Level")
+	public WebElement accessLevel;
+	
+	@FindBy(xpath="//div[text()='Add Access Level']")
+	public WebElement addAccessLevel;
+	
+	@FindBy(id="scheduleId")
+	public WebElement scheduleId;
+	
+	@FindBy(xpath="//div[text()='WEEKDAY_SCHEDULE']")
+	public WebElement chooseSchedule;
+	
+	@FindBy(xpath ="//span[text()='Door Groups']")
+	public WebElement doorGroups;
+	
+	@FindBy(xpath ="(//input[@class=\"ant-checkbox-input\"])[2]")
+	public WebElement selectDoorGroup;
+	
+	@FindBy(xpath="//span[text()='Automation_Access_Level']")
+	public WebElement existingAccessLevel;
+	
+	@FindBy(id="grantAccessOnHoliday")
+	public WebElement grantAccessOnHoliday;
+	
+	@FindBy(id="User")
+	public WebElement user;
+	
+	@FindBy(xpath = "//span[contains(text(),'Accessor')]")
+	public WebElement accessor;
+	
+	@FindBy(xpath="//div[contains(text(),'Add Accessor')]")
+	public WebElement addAccessor;
+	
+	@FindBy(id="uid")
+	public WebElement uniqueId;
+	
+	
+	@FindBy(id="holidayGroupIdList")
+	public WebElement holidayGroupIdList;
+	
+	@FindBy(id ="accessLevelIds")
+	public WebElement accessLevelIds;
+	
+	@FindBy(id="department")
+	public WebElement department;
+	
+	@FindBy(id="accessMediumDetails_0_active")
+	public WebElement accessMediumActive;
+	
+	@FindBy(id="accessMediumDetails_0_name")
+	public WebElement accessMediumName;
+	
+	@FindBy(id="accessMediumDetails_0_validFrom")
+	public WebElement accessMediumValidFrom;
+	
+	@FindBy(id="accessMediumDetails_0_expiryDate")
+	public WebElement accessMediumValidTill;
+	
+	@FindBy(id="accessMediumDetails_0_accessMediumType")
+	public WebElement accessMediumType;
+	
+	@FindBy(xpath ="//div[contains(text(),'Card')]")
+	public WebElement cardAccessMedium;
+	
+	@FindBy(id="accessMediumDetails_0_accessMediumNumber")
+	public WebElement cardNumber;
+	
+	@FindBy(id="accessMediumDetails_0_facilityCode")
+	public WebElement facilityCode;
+	
+	@FindBy(xpath ="//span[contains(text(),'Accessor_Automation')]")
+	public WebElement existingAccessor;
+	
+	@FindBy(id="active")
+	public WebElement enabledButton;
+	
+	
+	@FindBy(xpath="//span[text()='Visitor']")
+	public WebElement visitor;
+	
+	@FindBy(xpath="//div[contains(text(),'Add Visitor')]")
+	public WebElement addVisitor;
+	
+	@FindBy(id="visitingFromTime")
+	public WebElement visitingTime;
+	
+	@FindBy(id="visitingTillTime")
+	public WebElement visitingTillTime;
+	
+	@FindBy(id="temporaryAccessCOList_0_active")
+	public WebElement temporaryAccessMediumActive;
+	
+	@FindBy(id="temporaryAccessCOList_0_accessLevelId")
+	public WebElement temporaryAccessLevel;
+	
+	@FindBy(id="temporaryAccessCOList_0_startDate")
+	public WebElement temporaryAccessStartDate;
+	
+	@FindBy(id="temporaryAccessCOList_0_endDate")
+	public WebElement temporaryAccessEndDate;
+	
+	@FindBy(xpath="//span[@class='ant-upload']")
+	public WebElement uploadImage;
+	
+	@FindBy(xpath="(//span[text()='Yes'])[2]")
+	public WebElement yesClick;
+	
+	@FindBy(xpath="//span[contains(text(),'Ok')]")
+	public WebElement okButton;
+	
+	@FindBy(xpath="(//span[contains(text(),'Ok')])[2]")
+	public WebElement ok2Button;
+	
+	@FindBy(xpath="//span[contains(text(),'Fixed Holiday')]")
+	public WebElement fixedHoliday;
+	
+	@FindBy(xpath="//div[contains(text(),'Add Fixed Holiday')]")
+	public WebElement addFixedHoliday;
+	 
+	
+	
 	public void clickOnSaveButton() throws InterruptedException {
 
 		saveButton.click();
@@ -460,9 +684,10 @@ public class TestBase extends ListenersApp {
 
 	public void clickOnYesButton() throws InterruptedException {
 
+		wait(5000);
 		yesButton.click();
 		test.log(LogStatus.INFO, " Click on Yes Button ");
-		wait(3000);
+		wait(2000);
 
 	}
 
@@ -470,5 +695,10 @@ public class TestBase extends ListenersApp {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
+	}
+	
+	public void scrollModalScreen() {
+		
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);");
 	}
 }

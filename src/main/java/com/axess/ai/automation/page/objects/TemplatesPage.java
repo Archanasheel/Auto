@@ -1,8 +1,9 @@
 
 package com.axess.ai.automation.page.objects;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-
 
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
@@ -13,6 +14,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class TemplatesPage extends TestBase {
 
 	SoftAssert softassert = new SoftAssert();
+	Actions actions = new Actions(driver);
 
 	public TemplatesPage() {
 
@@ -82,17 +84,19 @@ public class TemplatesPage extends TestBase {
 
 		moduleTypeId.click();
 		wait(5000);
-		doorModule.click();
-		test.log(LogStatus.INFO, "Select module type Door");
+		moduleTypeId.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Select module type ");
 		wait(2000);
 
 		dataTypeList.click();
 		wait(2000);
-		booleanDataType.click();
+		dataTypeList.sendKeys(Keys.ENTER);
+		// if need to select other data type then use down key then enter key
 		test.log(LogStatus.INFO, " Select datatype Boolean");
 		wait(3000);
 
 		clickOnSaveButton();
+
 		// update event field
 		newField.click();
 		test.log(LogStatus.INFO, "click on new event field");
@@ -120,7 +124,7 @@ public class TemplatesPage extends TestBase {
 	}
 
 	public void verifyEventTemplate() throws InterruptedException {
-		
+
 		eventTemplate.click();
 		test.log(LogStatus.INFO, "Click on Event Template");
 		wait(5000);
@@ -133,7 +137,7 @@ public class TemplatesPage extends TestBase {
 			clickOnYesButton();
 
 		}
-	
+
 		addEventTemplate.click();
 		test.log(LogStatus.INFO, "Add event template");
 		wait(5000);
@@ -144,22 +148,13 @@ public class TemplatesPage extends TestBase {
 
 		moduleTypeId.click();
 		wait(3000);
-		doorModule.click();
-		test.log(LogStatus.INFO, "Select module type Door");
+		moduleTypeId.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Select module type");
 		wait(5000);
 
 		addFields.click();
 		test.log(LogStatus.INFO, "Add event fields in event template");
 		wait(5000);
-
-		// dataTypeFilter.click();
-		// test.log(LogStatus.INFO, "Choose the data type for filtering multiple event
-		// fields");
-		// wait(3000);
-
-		// singleSelectList.click();
-		// test.log(LogStatus.INFO, "Select single select list data type");
-		// wait(3000);
 
 		eventCheckBox.click();
 		test.log(LogStatus.INFO, "select event field for template");
@@ -170,7 +165,7 @@ public class TemplatesPage extends TestBase {
 		wait(2000);
 
 		requiredCheckBox.click();
-		test.log(LogStatus.INFO,"Click on required checkbox");
+		test.log(LogStatus.INFO, "Click on required checkbox");
 		wait(3000);
 
 		clickOnSaveButton();
@@ -189,7 +184,7 @@ public class TemplatesPage extends TestBase {
 		wait(3000);
 		// delete template
 		softassert.assertTrue(driver.getPageSource().contains("YachnaYachna"));
-	
+
 		updateExistingTemplate.click();
 		wait(5000);
 		clickOnDeleteButton();
@@ -202,7 +197,7 @@ public class TemplatesPage extends TestBase {
 		settingField.click();
 		test.log(LogStatus.INFO, "Click on Setting field");
 		wait(3000);
-		
+
 		if (driver.getPageSource().contains("YachnaTest")) {
 			newField.click();
 			test.log(LogStatus.INFO, "Delete already exist setting field with same name");
@@ -211,7 +206,7 @@ public class TemplatesPage extends TestBase {
 			clickOnYesButton();
 
 		}
-		
+
 		addSettingField.click();
 		test.log(LogStatus.INFO, "Add Setting Field");
 		wait(3000);
@@ -228,13 +223,13 @@ public class TemplatesPage extends TestBase {
 
 		moduleTypeId.click();
 		wait(2000);
-		doorModule.click();
-		test.log(LogStatus.INFO, "Select module type Door");
+		moduleTypeId.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Select module type");
 		wait(2000);
 
 		dataTypeList.click();
 		wait(2000);
-		booleanDataType.click();
+		dataTypeList.sendKeys(Keys.ENTER);
 		test.log(LogStatus.INFO, " Select datatype Boolean");
 		wait(3000);
 
@@ -279,7 +274,6 @@ public class TemplatesPage extends TestBase {
 
 		}
 
-		
 		addSettingTemplate.click();
 		test.log(LogStatus.INFO, "Add setting template");
 		wait(2000);
@@ -289,36 +283,24 @@ public class TemplatesPage extends TestBase {
 
 		moduleTypeId.click();
 		wait(3000);
-		doorModule.click();
-		test.log(LogStatus.INFO, "Select module type Door");
+		moduleTypeId.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Select module type");
 		wait(5000);
 
 		addFields.click();
 		test.log(LogStatus.INFO, "Add event fields in event template");
 		wait(5000);
 
-		// dataTypeFilter.click();
-		// test.log(LogStatus.INFO, "Choose the data type for filtering multiple event
-		// fields");
-		// wait(3000);
-
-		// singleSelectList.click();
-		// test.log(LogStatus.INFO, "Select single select list data type");
-		// wait(3000);
-
-		eventCheckBox.click();
+		checkBoxEvent.click();
 		test.log(LogStatus.INFO, "select event field for template");
 		wait(3000);
 
 		smallSaveBtn.click();
 		wait(2000);
 
-		// requiredCheckBox.click();
-		// wait(3000);
-		selectDefaultValue.click();
-		wait(3000);
+		addIntegerValue.click();
+		addIntegerValue.sendKeys("1");
 
-		chooseTrue.click();
 		wait(2000);
 
 		clickOnSaveButton();
@@ -337,7 +319,6 @@ public class TemplatesPage extends TestBase {
 		wait(5000);
 		// delete template
 		softassert.assertTrue(driver.getPageSource().contains("YachnaYachna"));
-		// updated template click then delete operation
 		updateExistingTemplate.click();
 		wait(5000);
 		clickOnDeleteButton();
@@ -369,8 +350,8 @@ public class TemplatesPage extends TestBase {
 
 		moduleTypeId.click();
 		wait(3000);
-		doorModule.click();
-		test.log(LogStatus.INFO, "Select module type Door");
+		moduleTypeId.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Select module type");
 		wait(5000);
 
 		moduleSubType.click();
@@ -380,8 +361,8 @@ public class TemplatesPage extends TestBase {
 		selectEvntTemplate.click();
 		test.log(LogStatus.INFO, "Select Event Template");
 		wait(3000);
-
-		selectEventTemplateDoor.click();
+		selectEvntTemplate.sendKeys(Keys.ENTER);
+		// if need to select other options so need to add arrow keys then enter key
 		test.log(LogStatus.INFO, "Select existing event template");
 		wait(3000);
 
@@ -389,7 +370,8 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, "Select Setting Template");
 		wait(5000);
 
-		selectSettingTemplateDoor.click();
+		selectSettingTemplate.sendKeys(Keys.ENTER);
+		// if need to select other options so need to add arrow keys then enter key
 		test.log(LogStatus.INFO, "Select Setting Template");
 		wait(3000);
 
@@ -419,7 +401,7 @@ public class TemplatesPage extends TestBase {
 
 	public void verifyDeviceTemplate() throws InterruptedException {
 
-		wait(3000);
+		wait(5000);
 		deviceTemplate.click();
 		test.log(LogStatus.INFO, "Click on Device Template");
 		wait(5000);
@@ -433,7 +415,7 @@ public class TemplatesPage extends TestBase {
 
 		}
 
-		wait(3000);
+		wait(4000);
 		addDeviceTemplate.click();
 		test.log(LogStatus.INFO, "Add Device Template");
 		wait(3000);
@@ -444,7 +426,7 @@ public class TemplatesPage extends TestBase {
 
 		moduleTypeSelect.click();
 		wait(3000);
-		doorModule.click();
+		moduleTypeSelect.sendKeys(Keys.ENTER);
 		test.log(LogStatus.INFO, "Select module type Door");
 		wait(5000);
 
@@ -452,7 +434,7 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, " Seclect Module Template for Device Template");
 		wait(3000);
 
-		moduleDoorSelect.click();
+		moduleTemplateSelect.sendKeys(Keys.ENTER);
 		test.log(LogStatus.INFO, "Choose module for device template");
 		wait(3000);
 
@@ -513,7 +495,8 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, "Select Network Template Type");
 		wait(3000);
 
-		panelNetworkTemplate.click();
+		networkTemplateType.sendKeys(Keys.ENTER);
+		// if need to choose cluster then one arrow down key then enter key
 		test.log(LogStatus.INFO, "Choose panel network template type");
 		wait(3000);
 
@@ -521,7 +504,8 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, "Choose Network Field Type");
 		wait(3000);
 
-		readFieldType.click();
+		fieldType.sendKeys(Keys.ENTER);
+		// if need to choose Write then one arrow down key then enter key
 		test.log(LogStatus.INFO, " Read Network field Type");
 		wait(2000);
 
@@ -529,7 +513,7 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, "Select data type");
 		wait(3000);
 
-		booleanDataType.click();
+		dataTypeList.sendKeys(Keys.ENTER);
 		test.log(LogStatus.INFO, "Choose boolean Data type");
 		wait(3000);
 
@@ -599,7 +583,9 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, "select network field");
 		wait(3000);
 
-		chooseOnlineMode.click();
+		selectNtwrkField.sendKeys(Keys.ENTER);
+		// if need to select OFFLINE mode then need to add arrow key and then enter key
+		// onlineMode.click();
 		test.log(LogStatus.INFO, "Choose Online mode");
 		wait(3000);
 
@@ -666,7 +652,8 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, "select network field");
 		wait(3000);
 
-		chooseOnlineMode.click();
+		selectNtwrkField.sendKeys(Keys.ENTER);
+		// if need to select OFFLINE mode then need to add arrow key and then enter key
 		test.log(LogStatus.INFO, "Choose Online mode");
 		wait(3000);
 
@@ -727,6 +714,7 @@ public class TemplatesPage extends TestBase {
 		wait(3000);
 
 		clickOnSaveButton();
+		wait(5000);
 		// read & Update
 		softassert.assertTrue(driver.getPageSource().contains("YachnaTest"));
 		existingModule.click();
@@ -745,7 +733,8 @@ public class TemplatesPage extends TestBase {
 		existingModule.click();
 		wait(5000);
 		clickOnDeleteButton();
-		clickOnYesButton(); 
+		clickOnYesButton();
+		wait(5000);
 
 	}
 
