@@ -61,29 +61,29 @@ public class SystemUsersPageTest extends TestBase {
 		systemUsersPage.verifyAdministratorUsers();
 	}
 
-	@Test(priority = 3)
-	public void validateadminexistingRoles() throws Throwable {
+	@Test(priority = 4)
+	public void validateExistingAdminUser() throws Throwable {
 
 		systemUsersPage = new SystemUsersPage();
-		systemUsersPage.verifyAdminExistingRoles();
+		systemUsersPage.verifyAdminExistingUsers();
 
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void validateInstallationUser() throws Throwable {
 
 		systemUsersPage = new SystemUsersPage();
 		systemUsersPage.verifyInstallationUsers();
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 6)
 	public void validateOrganizationUser() throws Throwable {
 
 		systemUsersPage = new SystemUsersPage();
 		systemUsersPage.verifyOragnizationUsers();
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 9)
 	public void validateAllUsers() throws Throwable {
 
 		systemUsersPage = new SystemUsersPage();
@@ -93,20 +93,20 @@ public class SystemUsersPageTest extends TestBase {
 
 	@Test(priority = 7)
 	public void validateManageRoles() throws Throwable {
-		
+
 		systemUsersPage = new SystemUsersPage();
 		systemUsersPage.verfiyManageRoles();
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 10)
 	public void validateAddNewUserAndDelete() throws Throwable {
-		
+
 		systemUsersPage = new SystemUsersPage();
 		systemUsersPage.verifyNewUserCrud();
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 8)
 	public void validateAPIKeys() throws Throwable {
 
 		systemUsersPage.verfiyAPIKeys();

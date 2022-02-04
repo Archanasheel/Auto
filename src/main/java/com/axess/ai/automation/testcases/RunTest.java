@@ -16,24 +16,26 @@ public class RunTest {
 	public static String browser;
 	public static String env;
 	public static String xml;
-	
+
 	public static void main(String[] args) throws InterruptedException, IOException {
-		
+
 		try {
-			FileUtils.forceDelete(new File(System.getProperty(ApplicationConstants.USER_DIRECTORY) + ApplicationConstants.EXTENTREPORT));
-		} catch(Exception e) {
-			
+			FileUtils.forceDelete(new File(
+					System.getProperty(ApplicationConstants.USER_DIRECTORY) + ApplicationConstants.EXTENTREPORT));
+		} catch (Exception e) {
+
 		}
-		
+
 		env = args[0];
 		browser = args[1];
-	
+
 		TestNG runner = new TestNG();
 		List<String> suitefiles = new ArrayList<String>();
-		
-	    suitefiles.add(System.getProperty(ApplicationConstants.USER_DIRECTORY) + ApplicationConstants.XML  +  env  + ApplicationConstants.XMLFILE_EXTENSION); 
-	    runner.setTestSuites(suitefiles);
-	    runner.run(); 
-		
+
+		suitefiles.add(System.getProperty(ApplicationConstants.USER_DIRECTORY) + ApplicationConstants.XML + env
+				+ ApplicationConstants.XMLFILE_EXTENSION);
+		runner.setTestSuites(suitefiles);
+		runner.run();
+
 	}
 }

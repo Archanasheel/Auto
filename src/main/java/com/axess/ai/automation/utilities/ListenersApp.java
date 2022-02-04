@@ -54,6 +54,7 @@ public class ListenersApp implements ITestListener, ISuiteListener {
 			FileInputStream fileInputStream = new FileInputStream(
 					System.getProperty(ApplicationConstants.USER_DIRECTORY) + ApplicationConstants.CONFIGURATIONS + env);
 			prop.load(fileInputStream);
+		
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
