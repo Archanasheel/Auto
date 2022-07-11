@@ -6,6 +6,7 @@
       <class name="com.axess.ai.automation.testcases.TemplatesPageTest">
         <methods>
           <include name="tearDown"/>
+          <include name="validateModuleTemplate"/>
           <include name="setup"/>
           <include name="validateNetworkTemplate"/>
         </methods>

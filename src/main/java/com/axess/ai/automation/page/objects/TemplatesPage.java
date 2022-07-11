@@ -470,7 +470,7 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, "Click on Network Template");
 		wait(5000);
 
-		if (driver.getPageSource().contains("Yachna")) {
+		if (driver.getPageSource().contains("YachnaTest")) {
 			existingTemplate.click();
 			wait(5000);
 
