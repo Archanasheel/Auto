@@ -29,6 +29,7 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, " Click on Device and Module ");
 		wait(5000);
 		templateLink.click();
+		template.click();
 		test.log(LogStatus.INFO, "Click on Templates");
 		wait(5000);
 	}
@@ -459,6 +460,118 @@ public class TemplatesPage extends TestBase {
 		wait(5000);
 		clickOnDeleteButton();
 		clickOnYesButton();
+
+	}
+	
+	public void verifyNetworkTemplate() throws InterruptedException {
+
+		wait(5000);
+		networkTemplate.click();
+		test.log(LogStatus.INFO, "Click on Network Template");
+		wait(5000);
+
+		if (driver.getPageSource().contains("Yachna")) {
+			existingTemplate.click();
+			wait(5000);
+
+			clickOnDeleteButton();
+			clickOnYesButton();
+
+		}
+
+		wait(4000);
+		addNetworkNodeTemplate.click();
+		test.log(LogStatus.INFO, "Add Network Node Template");
+		wait(3000);
+
+		nameField.click();
+		nameField.sendKeys("YachnaTest");
+		wait(4000);
+
+		networkNodeTypeSelect.click();
+		wait(3000);
+		//networkNodeTypeSelect.sendKeys(Keys.ARROW_DOWN); // if need to choose Cluster then one arrow down key then enter key
+		networkNodeTypeSelect.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Select node type");
+		wait(5000);
+		
+		//Fields for read
+		networkNodeDisplayName0.click();
+		networkNodeDisplayName0.sendKeys("YachnaTest");
+		test.log(LogStatus.INFO, "Enter Display Name0");
+		wait(3000);
+		
+		networkNodeFieldName0.click();
+		networkNodeFieldName0.sendKeys("New");
+		test.log(LogStatus.INFO, "Enter Field Name");
+		wait(3000);
+
+		networkNodeFieldType0.click();
+		test.log(LogStatus.INFO, "Choose Network Field Type");
+		wait(3000);
+		networkNodeFieldType0.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, " Read Network field Type");
+		wait(2000);
+
+		networkNodeDataType0.click();
+		test.log(LogStatus.INFO, "Select data type");
+		wait(3000);
+		networkNodeDataType0.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Choose boolean Data type");
+		wait(3000);
+		
+		clickAddNewField.click();
+		
+		//Fields for write
+		networkNodeDisplayName1.click();
+		networkNodeDisplayName1.sendKeys("YachnaTest");
+		test.log(LogStatus.INFO, "Enter Display Name");
+		wait(3000);
+		
+		networkNodeFieldName1.click();
+		networkNodeFieldName1.sendKeys("New");
+		test.log(LogStatus.INFO, "Enter Field Name");
+		wait(3000);
+
+		networkNodeFieldType1.click();
+		test.log(LogStatus.INFO, "Choose Network Field Type");
+		wait(3000);		
+		networkNodeFieldType1.sendKeys(Keys.ARROW_DOWN); 	// if need to choose Write then one arrow down key then enter key
+		networkNodeFieldType1.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, " Write Network field Type");
+		wait(2000);
+
+		networkNodeDataType1.click();
+		test.log(LogStatus.INFO, "Select data type");
+		wait(3000);
+		networkNodeDataType1.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Choose boolean Data type1");
+		wait(3000);
+		
+		clickOnAddButton();
+
+		// read & update
+		softassert.assertTrue(driver.getPageSource().contains("YachnaTest"));
+		newField.click();
+		wait(3000);
+		editButton.click();
+		wait(3000);
+
+		networkNodeFieldName0.click();
+		networkNodeFieldName0.sendKeys("New");
+		wait(3000);
+		clickOnUpdateButton();
+		wait(3000);
+
+		// delete event field
+
+		softassert.assertTrue(driver.getPageSource().contains("NewNew"));
+
+		newField.click();
+		wait(5000);
+
+		//clickOnDeleteButton();
+		//clickOnYesButton();
 
 	}
 

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-07-11T11:11:22 IST" name="Suite" finished-at="2022-07-11T11:13:57 IST" duration-ms="154815">
+    <groups>
+    </groups>
+    <test started-at="2022-07-11T11:11:22 IST" name="Test Login" finished-at="2022-07-11T11:11:37 IST" duration-ms="15215">
+      <class name="com.axess.ai.automation.testcases.LoginPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.axess.ai.automation.testcases.LoginPageTest@5427c60c]" started-at="2022-07-11T11:11:22 IST" name="setup" finished-at="2022-07-11T11:11:27 IST" duration-ms="5402" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateUrl()[pri:1, instance:com.axess.ai.automation.testcases.LoginPageTest@5427c60c]" started-at="2022-07-11T11:11:27 IST" name="validateUrl" finished-at="2022-07-11T11:11:27 IST" duration-ms="65" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateUrl -->
+        <test-method signature="loginwithcredentials()[pri:2, instance:com.axess.ai.automation.testcases.LoginPageTest@5427c60c]" started-at="2022-07-11T11:11:27 IST" name="loginwithcredentials" finished-at="2022-07-11T11:11:32 IST" duration-ms="4338" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginwithcredentials -->
+        <test-method signature="validateclickOnLogin()[pri:3, instance:com.axess.ai.automation.testcases.LoginPageTest@5427c60c]" started-at="2022-07-11T11:11:32 IST" name="validateclickOnLogin" finished-at="2022-07-11T11:11:37 IST" duration-ms="5136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateclickOnLogin -->
+        <test-method signature="validateTitle()[pri:4, instance:com.axess.ai.automation.testcases.LoginPageTest@5427c60c]" started-at="2022-07-11T11:11:37 IST" name="validateTitle" finished-at="2022-07-11T11:11:37 IST" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.axess.ai.automation.testcases.LoginPageTest@5427c60c]" started-at="2022-07-11T11:11:37 IST" name="tearDown" finished-at="2022-07-11T11:11:37 IST" duration-ms="227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.axess.ai.automation.testcases.LoginPageTest -->
+    </test> <!-- Test Login -->
+    <test started-at="2022-07-11T11:11:37 IST" name="Test Templates" finished-at="2022-07-11T11:13:57 IST" duration-ms="139537">
+      <class name="com.axess.ai.automation.testcases.TemplatesPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.axess.ai.automation.testcases.TemplatesPageTest@37574691]" started-at="2022-07-11T11:11:37 IST" name="setup" finished-at="2022-07-11T11:11:50 IST" duration-ms="13479" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateTemplates()[pri:1, instance:com.axess.ai.automation.testcases.TemplatesPageTest@37574691]" started-at="2022-07-11T11:11:50 IST" name="validateTemplates" finished-at="2022-07-11T11:12:06 IST" duration-ms="15781" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateTemplates -->
+        <test-method signature="validateNetworkTemplate()[pri:9, instance:com.axess.ai.automation.testcases.TemplatesPageTest@37574691]" started-at="2022-07-11T11:12:06 IST" name="validateNetworkTemplate" finished-at="2022-07-11T11:13:56 IST" duration-ms="109917" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateNetworkTemplate -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.axess.ai.automation.testcases.TemplatesPageTest@37574691]" started-at="2022-07-11T11:13:56 IST" name="tearDown" finished-at="2022-07-11T11:13:57 IST" duration-ms="360" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.axess.ai.automation.testcases.TemplatesPageTest -->
+    </test> <!-- Test Templates -->
+  </suite> <!-- Suite -->
+</testng-results>

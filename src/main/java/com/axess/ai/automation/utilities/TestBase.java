@@ -98,6 +98,9 @@ public class TestBase extends ListenersApp {
 
 	@FindBy(xpath = "//span[contains(text(),'Save')]")
 	public WebElement saveButton;
+	
+	@FindBy(xpath = "//button[@class='ant-btn ant-btn-primary ant-btn-block']")
+	public WebElement addButton;
 
 	@FindBy(xpath = "//span[contains(text(),'Cancel')]")
 	public WebElement cancelButton;
@@ -191,9 +194,12 @@ public class TestBase extends ListenersApp {
 
 	@FindBy(xpath = "//div[contains(text(),'Filter')]")
 	public WebElement roleFilter;
-
-	@FindBy(id = "template")
+	
+	@FindBy(xpath = "//span[contains(text(),'Config Devices')]")
 	public WebElement templateLink;
+	
+	@FindBy(id = "template")
+	public WebElement template;
 
 	@FindBy(id = "entities")
 	public WebElement entitiesLink;
@@ -303,7 +309,7 @@ public class TestBase extends ListenersApp {
 	@FindBy(xpath="//input[@class=\"ant-input-number-input\"]")
 	public WebElement addIntegerValue;
 
-	@FindBy(xpath = "//span[contains(text(),'Module Template')]")
+	@FindBy(xpath = "//div[contains(text(),'Module Template')]")
 	public WebElement moduleTemplate;
 
 	@FindBy(xpath = "//div[contains(text(),'Add Module Template')]")
@@ -321,18 +327,54 @@ public class TestBase extends ListenersApp {
 	@FindBy(xpath = "(//div[text()='Yachna'])[2]")
 	public WebElement selectSettingTemplateAmbient;
 
-	@FindBy(xpath = "//span[contains(text(),'Device Template')]")
+	@FindBy(xpath = "//div[contains(text(),'Device Template')]")
 	public WebElement deviceTemplate;
 
 	@FindBy(xpath = "//div[contains(text(),'Add Device Template')]")
 	public WebElement addDeviceTemplate;
+
+	@FindBy(xpath = "//div[contains(text(),'Network Template')]")
+	public WebElement networkTemplate;
+	
+	@FindBy(xpath = "//div[contains(text(),'Add Network Node Template')]")
+	public WebElement addNetworkNodeTemplate;
 
 	@FindBy(id = "moduleTemplates_0_moduleTemplate")
 	public WebElement moduleTemplateSelect;
 
 	@FindBy(id = "moduleTemplates_0_moduleType")
 	public WebElement moduleTypeSelect;
-
+	
+	@FindBy(id = "gatewayType")
+	public WebElement networkNodeTypeSelect;
+	
+	@FindBy(id = "networkFieldCOS_0_displayName")
+	public WebElement networkNodeDisplayName0;
+	
+	@FindBy(id = "networkFieldCOS_0_fieldName")
+	public WebElement networkNodeFieldName0;
+	
+	@FindBy(id = "networkFieldCOS_0_fieldType")
+	public WebElement networkNodeFieldType0;
+	
+	@FindBy(id = "networkFieldCOS_0_dataType")
+	public WebElement networkNodeDataType0;
+	
+	@FindBy(xpath = "//span[contains(text(),'Add New Field')]")
+	public WebElement clickAddNewField;
+	
+	@FindBy(id = "networkFieldCOS_1_displayName")
+	public WebElement networkNodeDisplayName1;
+	
+	@FindBy(id = "networkFieldCOS_1_fieldName")
+	public WebElement networkNodeFieldName1;
+	
+	@FindBy(id = "networkFieldCOS_1_fieldType")
+	public WebElement networkNodeFieldType1;
+	
+	@FindBy(id = "networkFieldCOS_1_dataType")
+	public WebElement networkNodeDataType1;
+	
 	@FindBy(id = "moduleSubType")
 	public WebElement moduleSubType;
 
@@ -655,6 +697,14 @@ public class TestBase extends ListenersApp {
 	public void clickOnSaveButton() throws InterruptedException {
 
 		saveButton.click();
+		test.log(LogStatus.INFO, " Click on Save Button");
+		wait(3000);
+
+	}
+	
+	public void clickOnAddButton() throws InterruptedException {
+
+		addButton.click();
 		test.log(LogStatus.INFO, " Click on Save Button");
 		wait(3000);
 
