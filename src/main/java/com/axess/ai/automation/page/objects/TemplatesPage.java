@@ -679,6 +679,9 @@ public class TemplatesPage extends TestBase {
 		nameField.click();
 		nameField.sendKeys("Yachna");
 		wait(3000);
+		
+		
+		
 
 		addFields.click();
 		test.log(LogStatus.INFO, "Add new Fields");
@@ -850,5 +853,65 @@ public class TemplatesPage extends TestBase {
 		wait(5000);
 
 	}
+
+
+public void verifyModuleTemplate1() throws InterruptedException {
+
+	moduleTemplate.click();
+	test.log(LogStatus.INFO, "Click on module templates");
+	wait(3000);
+
+	if (driver.getPageSource().contains("YachnaTest")) {
+		existingModule.click();
+		wait(5000);
+
+		clickOnDeleteButton();
+		clickOnYesButton();
+
+	}
+
+	addModuleTemplate.click();
+	test.log(LogStatus.INFO, "Add module template");
+	wait(3000);
+
+	nameField.click();
+	nameField.sendKeys("Yachna");
+	wait(3000);
+
+	displayName.click();
+	displayName.sendKeys("YachnaTest");
+	test.log(LogStatus.INFO, "Enter Display Name");
+	wait(3000);
+
+
+	nameField.click();
+	nameField.sendKeys("selenium");
+	wait(3000);
+
+
+	clickOnSaveButton();
+	wait(5000);
+	// read & Update
+	softassert.assertTrue(driver.getPageSource().contains("YachnaTest"));
+	existingModule.click();
+	wait(3000);
+	editButton.click();
+	wait(3000);
+
+	nameField.click();
+	nameField.sendKeys("Yachna");
+	wait(3000);
+	clickOnUpdateButton();
+	wait(3000);
+	// delete template
+	softassert.assertTrue(driver.getPageSource().contains("YachnaYachna"));
+	// updated template click then delete operation
+	existingModule.click();
+	wait(5000);
+	clickOnDeleteButton();
+	clickOnYesButton();
+	wait(5000);
+
+}
 
 }
