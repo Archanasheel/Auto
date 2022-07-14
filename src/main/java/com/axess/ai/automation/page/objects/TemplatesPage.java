@@ -199,40 +199,28 @@ public class TemplatesPage extends TestBase {
 		test.log(LogStatus.INFO, "Click on Setting field");
 		wait(3000);
 
-		if (driver.getPageSource().contains("YachnaTest")) {
-			newField.click();
-			test.log(LogStatus.INFO, "Delete already exist setting field with same name");
-			wait(5000);
-			clickOnDeleteButton();
-			clickOnYesButton();
-
-		}
-
 		addSettingField.click();
 		test.log(LogStatus.INFO, "Add Setting Field");
 		wait(3000);
 
 		fieldName.click();
-		fieldName.sendKeys("New");
+		fieldName.sendKeys("Archana");
 		test.log(LogStatus.INFO, "Enter Field Name");
 		wait(3000);
 
 		displayName.click();
-		displayName.sendKeys("YachnaTest");
+		displayName.sendKeys("Selenium");
 		test.log(LogStatus.INFO, "Enter Display Name");
 		wait(3000);
 
-		moduleTypeId.click();
-		wait(2000);
-		moduleTypeId.sendKeys(Keys.ENTER);
-		test.log(LogStatus.INFO, "Select module type");
-		wait(2000);
 
 		dataTypeList.click();
 		wait(2000);
 		dataTypeList.sendKeys(Keys.ENTER);
 		test.log(LogStatus.INFO, " Select datatype Boolean");
 		wait(3000);
+		
+	
 
 		clickOnSaveButton();
 		// read & update
@@ -289,7 +277,8 @@ public class TemplatesPage extends TestBase {
 		wait(5000);
 
 		addFields.click();
-		test.log(LogStatus.INFO, "Add event fields in event template");
+		test.log(LogStatus.INFO, "Add event "
+				+ "fields in event template");
 		wait(5000);
 
 		checkBoxEvent.click();
@@ -336,10 +325,8 @@ public class TemplatesPage extends TestBase {
 		if (driver.getPageSource().contains("Yachna")) {
 			existingTemplate.click();
 			wait(5000);
-
 			clickOnDeleteButton();
 			clickOnYesButton();
-
 		}
 
 		addModuleTemplate.click();
@@ -348,7 +335,7 @@ public class TemplatesPage extends TestBase {
 
 		nameField.click();
 		nameField.sendKeys("Yachna");
-
+				
 		moduleTypeId.click();
 		wait(3000);
 		moduleTypeId.sendKeys(Keys.ENTER);
@@ -359,24 +346,49 @@ public class TemplatesPage extends TestBase {
 		moduleSubType.sendKeys("Temp");
 		wait(5000);
 
-		selectEvntTemplate.click();
-		test.log(LogStatus.INFO, "Select Event Template");
+		addSettingFields.click();
+		
+		settingFieldsName.click();
+		settingFieldsName.sendKeys("Archana");
 		wait(3000);
-		selectEvntTemplate.sendKeys(Keys.ENTER);
-		// if need to select other options so need to add arrow keys then enter key
-		test.log(LogStatus.INFO, "Select existing event template");
+		
+		settingFieldsDisplayName.click();
+		settingFieldsDisplayName.sendKeys("Red");
+		wait(2000);
+		
+		settingFieldsDataType.click();
+		test.log(LogStatus.INFO, "Select data type");
+		wait(3000);
+		settingFieldsDataType.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Choose boolean Data type");
+		wait(3000);
+		
+		settinFieldsUnitType.click();
+		settinFieldsUnitType.sendKeys("meters");
+		wait(2000);
+		
+		radioButtonType.click();
+		wait(3000);
+		
+		addEventFields.click();
+		
+		eventFieldsFieldName.click();
+		eventFieldsFieldName.sendKeys("Selenium");
+		wait(3000);
+		
+		eventFieldsDisplayName.click();
+		eventFieldsDisplayName.sendKeys("Testing");
+		wait(3000);
+		
+		eventFieldsDataType.click();
+		eventFieldsDataType.sendKeys(Keys.ENTER);
+		test.log(LogStatus.INFO, "Choose boolean Data type");
 		wait(3000);
 
-		selectSettingTemplate.click();
-		test.log(LogStatus.INFO, "Select Setting Template");
-		wait(5000);
+		eventFieldsUnit.click();
+		eventFieldsUnit.sendKeys("meters");
 
-		selectSettingTemplate.sendKeys(Keys.ENTER);
-		// if need to select other options so need to add arrow keys then enter key
-		test.log(LogStatus.INFO, "Select Setting Template");
-		wait(3000);
-
-		clickOnSaveButton();
+		clickOnAddButton();
 
 		// read & Update
 		softassert.assertTrue(driver.getPageSource().contains("Yachna"));
@@ -397,7 +409,6 @@ public class TemplatesPage extends TestBase {
 		wait(5000);
 		clickOnDeleteButton();
 		clickOnYesButton();
-
 	}
 
 	public void verifyDeviceTemplate() throws InterruptedException {
@@ -524,7 +535,7 @@ public class TemplatesPage extends TestBase {
 		
 		//Fields for write
 		networkNodeDisplayName1.click();
-		networkNodeDisplayName1.sendKeys("YachnaTest");
+		networkNodeDisplayName1.sendKeys("State");
 		test.log(LogStatus.INFO, "Enter Display Name");
 		wait(3000);
 		
@@ -565,13 +576,13 @@ public class TemplatesPage extends TestBase {
 
 		// delete event field
 
-		softassert.assertTrue(driver.getPageSource().contains("NewNew"));
+	softassert.assertTrue(driver.getPageSource().contains("NewNew"));
 
 		newField.click();
 		wait(5000);
 
-		//clickOnDeleteButton();
-		//clickOnYesButton();
+		clickOnDeleteButton();
+		clickOnYesButton();
 
 	}
 

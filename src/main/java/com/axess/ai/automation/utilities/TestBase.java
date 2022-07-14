@@ -2,7 +2,6 @@ package com.axess.ai.automation.utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import com.relevantcodes.extentreports.LogStatus;
@@ -240,18 +239,55 @@ public class TestBase extends ListenersApp {
 	@FindBy(xpath = "//div[contains(text(),'Add Event Field')]")
 	public WebElement addEventField;
 
-	@FindBy(id = "fieldName")
+	@FindBy(id = "settingFields_0_fieldName")
 	public WebElement fieldName;
 
-	@FindBy(id = "displayName")
+	@FindBy(id = "settingFields_0_displayName")
 	public WebElement displayName;
+	
+	@FindBy(id = "settingFields_0_dataType_list")
+	public WebElement dataTypeList;
+
 
 	@FindBy(id = "moduleTypeId")
 	public WebElement moduleTypeId;
+	
+	@FindBy(xpath = "//div[contains(text(),'Setting fields')]")
+	public WebElement addSettingFields;
+	
+	@FindBy(id = "settingFields_0_fieldName")
+	public WebElement settingFieldsName; 	
+	
+	@FindBy(id="settingFields_0_displayName")
+	public WebElement settingFieldsDisplayName;
+	
+	@FindBy (id="settingFields_0_dataType")
+	public WebElement settingFieldsDataType;
+	
+	@FindBy(id="settingFields_0_unit")
+    public WebElement settinFieldsUnitType; //unitType //eventFields
+	
+	@FindBy(xpath = "(//input[@type='radio'])[1]")
+	public WebElement radioButtonType;
+	
+	@FindBy(xpath = "//div[contains(text(),'Event Fields')]")
+	public WebElement addEventFields;
+	
+	@FindBy(id="eventFields_0_fieldName")
+	public WebElement eventFieldsFieldName;
+	
+	@FindBy(id ="eventFields_0_displayName")
+	public WebElement eventFieldsDisplayName;
+	
+	@FindBy(id="eventFields_0_dataType")
+	public WebElement eventFieldsDataType;
+	
+	@FindBy(id="eventFields_0_unit")
+	public WebElement eventFieldsUnit;
 
-	@FindBy(id = "dataType")
-	public WebElement dataTypeList;
-
+	@FindBy(xpath = "//span[contains(text(),'Add')]")
+	public WebElement AddButton;
+	
 	@FindBy(xpath = "//span[contains(text(),'YachnaTest')]")
 	public WebElement newField;
 
@@ -318,8 +354,8 @@ public class TestBase extends ListenersApp {
 	@FindBy(id = "event_template")
 	public WebElement selectEvntTemplate;
 	
-	@FindBy(id = "setting_template")
-	public WebElement selectSettingTemplate;
+	@FindBy(id = "settingFields_0_fieldName")
+	public WebElement selectSettingfield;
 	
 	@FindBy(xpath = "//div[contains(text(),'Yachna')]")
 	public WebElement selectEventTemplateAmbient;

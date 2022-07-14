@@ -6,7 +6,7 @@
 			<class name="com.axess.ai.automation.testcases.LoginPageTest" />
 		</classes>
 	</test>
-	<test name="Test Dashboard">
+	<!--<test name="Test Dashboard">
 		<classes>
 			<class name="com.axess.ai.automation.testcases.DashboardPageTest" />
 		</classes>
@@ -30,13 +30,13 @@
 		<classes>
 			<class name="com.axess.ai.automation.testcases.DeviceAndModulesPageTest" />
 		</classes>
-	</test>
+	</test> -->
 		<test name="Test Templates">
 		<classes>
 			<class name="com.axess.ai.automation.testcases.TemplatesPageTest" />
 		</classes>
 	</test>
-	<test name="Test Entities">
+	<!-- <test name="Test Entities">
 		<classes>
 			<class name="com.axess.ai.automation.testcases.EntitiesPageTest" />
 		</classes>
@@ -45,7 +45,7 @@
 		<classes>
 			<class name="com.axess.ai.automation.testcases.AccessControlPageTest" />
 		</classes>
-	</test>
+	</test> -->
 
 
 
