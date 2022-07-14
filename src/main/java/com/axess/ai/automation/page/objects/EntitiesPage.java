@@ -290,11 +290,11 @@ public class EntitiesPage extends TestBase {
 			test.log(LogStatus.INFO, "Select existing event template");
 			wait(3000);
 
-			selectSettingTemplate.click();
+			//selectSettingTemplate.click();
 			test.log(LogStatus.INFO, "Select Setting Template");
 			wait(5000);
 
-			selectSettingTemplate.sendKeys(Keys.ENTER);
+			//selectSettingTemplate.sendKeys(Keys.ENTER);
 			// if need to select other options so need to add arrow keys then enter key
 			test.log(LogStatus.INFO, "Select Setting Template");
 			wait(3000);
